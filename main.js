@@ -127,6 +127,9 @@ function agregarCarrito(array) {
       );
 
       carrito.push(productoElegido);
+
+      Swal.fire("Agregado!", "Click para continuar!", "success");
+
       //cargamos a localStorage, luego actualizamos el numero de productos en el car
       localStorage.setItem("carritoDeCompras", JSON.stringify(carrito));
       numberProductos.textContent = carrito.length;
@@ -150,23 +153,42 @@ function eliminarDelCarrito() {
           return item.id == e.currentTarget.classList[1].slice(13);
         }
       );
-      //console.log(productoElegido.id);
 
       //posicion,numeroEliminar,agregar// como viene del storage no tiene la misma direccion
-      carrito.splice(carrito.indexOf(productoElegido), 1);
 
-      //cargamos a localStorage, luego actualizamos el numero de productos en el car
-      localStorage.setItem("carritoDeCompras", JSON.stringify(carrito));
-      numberProductos.textContent = carrito.length;
-      priceProducts.textContent = carrito
-        .reduce((acc, item) => {
-          return (acc += item.price);
-        }, 0)
-        .toFixed(2);
+      Swal.fire({
+        title: "Seguro que desea eliminarlo?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Eliminar",
+        cancelButtonText: "Cancelar",
+      }).then((result) => {
+        if (result.isConfirmed) {
+          //==========================================================
+          carrito.splice(carrito.indexOf(productoElegido), 1);
 
-      //el problema es cuando quiero volver a cargar el contenido de la card
-      // cargarCardsCarrito(carrito);
-      window.location.href = window.location.href;
+          //cargamos a localStorage, luego actualizamos el numero de productos en el car
+          localStorage.setItem("carritoDeCompras", JSON.stringify(carrito));
+          numberProductos.textContent = carrito.length;
+          priceProducts.textContent = carrito
+            .reduce((acc, item) => {
+              return (acc += item.price);
+            }, 0)
+            .toFixed(2);
+
+          //el problema es cuando quiero volver a cargar el contenido de la card
+          //window.location.href = window.location.href;
+          //==========================================================
+          Swal.fire("Eliminado!", "Su producto fue eliminado", "success")
+          .then(result=>{
+            if(result.isConfirmed){
+              window.location.href = window.location.href;
+            }
+          })
+        }
+      });
     });
   });
 }
@@ -179,13 +201,19 @@ function realizarBusqueda(json) {
     });
     //cargame las tarjetas de la busqueda
     cargarCards(aux);
+    console.log(aux);
     //============================
     //llamo a la misma funcion pero ahora filtro dentro de carrito y auxiliar toma otro valor
-    //como auxiliar toma otro valor vuelve a cargar el div, y escucha si quiero elimiar 
-    realizarBusqueda(carrito);
-    cargarCardsCarrito(aux);
-    eliminarDelCarrito();
+    //como auxiliar toma otro valor vuelve a cargar el div, y escucha si quiero elimiar
+    if (localStorage.getItem("pestanaActual") === "Carrito") {
+      //aux toma los valores con los filtros del carrito
+      realizarBusqueda(carrito);
+      cargarCardsCarrito(aux);
+      eliminarDelCarrito();
+      console.log(aux);
+    }
     //=============================
+
     //ahora necesito que dentro de esta busqueda me escuche al nuevo container
     //buscas en este arreglo y lo agregas
     agregarCarrito(aux);
