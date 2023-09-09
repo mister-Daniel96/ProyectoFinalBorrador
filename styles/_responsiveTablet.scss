@@ -1,0 +1,31 @@
+@media (max-width:750px) {
+
+    .header-top {
+        width: 100%;
+        &-left {
+            padding: 0 10px;
+            gap: 10px;
+        }
+        .cart-venta {
+            padding: 0 10px;
+            height: 40px;
+        }
+    }
+
+    .header-bottom {
+        .frm-busqueda {
+            width: 50%;
+            .busqueda {
+                input {
+                    font-size: 15px;
+                }
+            }
+            input[type="submit"] {
+                width: 30%;
+                padding: 2px 10px;
+            }
+        }
+    }
+
+    //PARA EL BANNER Y INFORMACION NO HACEMOS NADA EN TABLET
+}

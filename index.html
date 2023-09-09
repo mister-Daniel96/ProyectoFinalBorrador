@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Nuestros estilos siempre van al ultimo  -->
+    <link rel="stylesheet" href="./styles/style.css">
+
+</head>
+
+<body>
+
+
+    <header class="header">
+        <div class="header-top">
+            <div class="header-top-left">
+                <img class="img-logo" src="./img/logoPage.avif" alt="" width="100px">
+                <nav class="navbar">
+                    <button class="button-close"><i class="fa-solid fa-xmark"></i></button>
+                    <ul>
+                        <li><a class="enlace" href="./index.html">Home</a></li>
+                        <li><a class="enlace" href="./pages/productos.html">Productos</a></li>
+                        <li><a class="enlace" href="./pages/carrito.html">Carrito</a></li>
+                        <li><a class="enlace" href="./pages/contacto.html">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="cart-venta">
+                <div class="cart">
+                    <span class="cart-number">0</span>
+                    <i class="fa-solid fa-cart-shopping cart-icon"></i>
+                </div>
+                <div class="cart-info">
+                    <span>Total:</span>
+                    <span class="cart-info__price">$0</span>
+                </div>
+            </div>
+        </div>
+        <div class="header-bottom">
+            <form action="" class="frm-busqueda">
+                <label for="busqueda" class="busqueda">
+                    <span><i class="fa-solid fa-magnifying-glass"></i></span>
+                    <input autocomplete="off" maxlength="30" type="text" id="busqueda"
+                        placeholder="Ingrese el producto a buscar">
+                </label>
+                <input type="submit" value="Buscar">
+
+            </form>
+            <button class="button-open"><i class="fa-solid fa-bars"></i></button>
+        </div>
+
+    </header>
+    <main class="main">
+        <section class="banner">
+            <h1 class="banner-title">Importaciones HotSale</h1>
+        </section>
+        <section class="main-info">
+            <article>
+                <h2>¿Quienes Somos?</h2>
+                <p>En HotSale, somos una empresa de importación apasionada por brindarte acceso a una amplia variedad de
+                    productos de alta calidad de todo el mundo. Nuestra misión es simplificar el proceso de importación
+                    y poner a tu alcance productos únicos y emocionantes. A pesar de ser una empresa recién creada,
+                    nuestra dedicación a la calidad y la satisfacción del cliente es inquebrantable..</p>
+            </article>
+            <article>
+                <h2>¿Que Ofrecemoss?</h2>
+                <p> <b>Variedad Incomparable:</b> En HotSale, ofrecemos una gama diversa y en constante crecimiento de
+                    productos
+                    que abarcan electrónica, moda, productos para el hogar, gadgets innovadores y más.
+                    <br><br>
+                    <b>Calidad Garantizada:</b> Trabajamos con proveedores confiables y verificamos meticulosamente cada
+                    producto .
+                    <br><br>
+                    <b>Simplicidad en la Importación:</b> Facilitamos el proceso de importación para que disfrutes de
+                    tus
+                    productos favoritos sin complicaciones.
+                </p>
+            </article>
+
+        </section>
+    </main>
+    <footer>
+
+    </footer>
+    <script src="./main.js"></script>
+</body>
+
+</html>
