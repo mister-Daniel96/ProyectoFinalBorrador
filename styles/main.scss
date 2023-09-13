@@ -6,8 +6,19 @@
 
 }
 
+.dark {
+    background-color: black;
+    color: whitesmoke;
+}
+
 .header {
     width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: whitesmoke;
+    z-index: 20;
 }
 
 .header-top {
@@ -235,7 +246,7 @@
 
     .item {
         width: 240px;
-        height: 320px;
+        height: 340px;
         background-color: #26425a;
         box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.322);
         color: #e1cbd7;
@@ -247,9 +258,17 @@
         img {
             display: block;
             width: 100%;
+            min-height: 150px;
             max-height: 150px;
             transition: 0.5s all;
             object-fit: cover;
+
+            &:hover {
+                padding: 10px;
+                object-fit: contain;
+                width: 100%;
+                border-radius: 20px;
+            }
         }
 
         &-info {
@@ -270,7 +289,8 @@
 
             div {
                 display: flex;
-                justify-content: space-around;
+                text-align: center;
+                gap: 15px;
             }
 
         }
@@ -292,6 +312,7 @@
             background-color: rgba(141, 231, 24, 0.678);
             color: #e1cbd1;
         }
+
         .btn-eliminar {
             width: 100%;
             padding: 15px 10px;
@@ -328,7 +349,211 @@
 }
 
 .productos-items-carrito {
-    @include styleCards;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    padding: 45px 20px;
+    width: 100%;
+    justify-content: center;
+
+    .item {
+        display: flex;
+        flex-direction: row;
+        width: 40%;
+        height: 120px;
+        padding: 10px 20px;
+        background-color: whitesmoke;
+        box-shadow: 1px 1px 10px 5px rgba(0, 0, 0, 0.322);
+        //  color: #e1cbd7;
+        color: #26425a;
+        border-radius: 5px;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+
+        img {
+            display: block;
+            width: 15%;
+            transition: 0.5s all;
+            object-fit: contain;
+
+            /* &:hover {
+                padding: 10px;
+                object-fit: contain;
+                width: 100%;
+                border-radius: 20px;
+            } */
+        }
+
+        &-info {
+
+            padding: 10px 12px;
+            margin-right: 15%;
+
+            h4 {
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 14px;
+                margin: 10px 0;
+                font-weight: bold;
+            }
+
+            p {
+                text-align: center;
+                margin-bottom: 10px;
+                font-size: 14px;
+            }
+
+            div {
+                display: flex;
+                text-align: center;
+                gap: 15px;
+            }
+
+        }
+
+
+
+        .btn-eliminar {
+            display: grid;
+            place-content: center;
+            width: 15%;
+            height: 100%;
+            padding: 15px 10px;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            font-weight: bold;
+            transition: 0.2s all;
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+            font-size: 20px;
+            background-color: rgb(216, 212, 212);
+        }
+
+        .btn-eliminar:hover {
+            background-color: rgba(170, 21, 21, 0.678);
+            color: #e1cbd1;
+        }
+    }
+
+}
+
+
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 0;
+}
+
+/*    FOOTER            */
+.footer {
+    background-color: black;
+    color: white;
+    /* Funciona con el padding-bottom y min-height:100vh */
+    position: relative;
+    bottom: 0;
+    left: 0;
+
+    .footer__container1 {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        /* width: 100%;=================================*/
+        max-width: none;
+
+
+    }
+
+}
+
+.footer__info {
+    /* trae problemas si lo pongo dentro del contenedor
+    anterior */
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+
+    & h4 {
+        margin: 30px 0;
+        text-align: center;
+    }
+
+    & p {
+        text-align: justify;
+    }
+}
+
+
+.footer__redes {
+    width: 25%;
+
+    h4 {
+        margin: 30px 0;
+    }
+
+    .red {
+        display: flex;
+        flex-direction: row;
+        margin: 10px 0;
+        justify-content: space-between;
+        align-items: center;
+
+        a {
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            align-items: center;
+
+            .red__img {
+                width: 30px;
+            }
+
+
+        }
+
+        .red__type {
+            margin-left: 10px;
+        }
+
+
+
+    }
+}
+
+
+
+.footer__myInfo {
+    width: 25%;
+
+    & h4 {
+        margin: 30px 0;
+    }
+
+    .footer__ubicacion,
+    .footer__number,
+    .footer__email {
+        display: flex;
+        flex-direction: row;
+        margin: 10px 0;
+
+        & span {
+            margin-left: 10px;
+            width: 100%;
+        }
+    }
+}
+
+.footer__container2 {
+    width: 100%;
+    max-width: none;
+    text-align: center;
+    /* padding-top: 10px; */
+    /*  padding-bottom: 10px; */
+
 }
 
 @import "./responsiveTablet";

@@ -8,6 +8,7 @@ const enlaces = document.querySelectorAll(".enlace");
 
 const carrito = [];
 
+
 openNav.addEventListener("click", () => {
   navbar.classList.add("active");
 });
@@ -79,8 +80,8 @@ function cargarCards(array) {
     <h4>${item.title}</h4>
    
     <div>
-        <span>${item.price}</span>
-        <span>${item.category}</span>
+        <span>Price: $.${item.price}</span>
+        <span>Category:${item.category}</span>
     </div>
     </div>
     <button class="btn-comprar" id="item-${item.id}">Agregar</button>
@@ -102,11 +103,11 @@ function cargarCardsCarrito(array) {
     <h4>${item.title}</h4>
    
     <div>
-        <span>${item.price}</span>
-        <span>${item.category}</span>
+        <span>Price: $.${item.price}</span>
+        <span>Caterory:${item.category}</span>
     </div>
     </div>
-    <button class="btn-eliminar item-carrito-${item.id}">Eliminar</button>
+    <button class="btn-eliminar item-carrito-${item.id}"><i class="fa-solid fa-trash"></i></button>
 
         </div>`);
   }, "");

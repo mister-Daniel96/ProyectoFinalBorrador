@@ -27,5 +27,74 @@
         }
     }
 
+
+    //====================================================
+    .productos-items-carrito {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        padding: 45px 20px;
+        width: 100%;
+        justify-content: center;
+    
+        .item {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+
+        }
+    
+    }
+    
+    
     //PARA EL BANNER Y INFORMACION NO HACEMOS NADA EN TABLET
+
+    /* FOOTER */
+
+
+    .footer__info {
+        width: 100%;
+
+        h4 {
+            display: flex;
+            justify-content: center;
+        }
+
+        p {
+            text-align: justify;
+        }
+    }
+
+    /* ============== */
+    .footer__redes {
+        width: 100%;
+        margin-top: 10px;
+
+        h4 {
+            text-align: center;
+        }
+    }
+
+    /* ==================== */
+    .footer__myInfo {
+        width: 100%;
+        margin-top: 10px;
+        /*     padding-left: 20px; */
+        /* overflow: hidden; */
+
+        & h4 {
+            margin: 20px 0;
+            text-align: center;
+        }
+    }
+
+    .footer__container2 {
+        width: 100%;
+        max-width: none;
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-top: 1px solid black;
+    }
+
 }

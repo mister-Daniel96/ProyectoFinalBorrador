@@ -125,4 +125,32 @@
             }
         }
     }
+
+//==================================================
+.productos-items-carrito {
+
+
+    .item {
+
+
+        &-info {
+
+
+
+            h4 {
+                text-align: center;
+                text-transform: uppercase;
+                font-size: 12px;
+                margin: 10px 0;
+            }
+
+        }
+
+
+    }
+
+}
+
+
+
 }
