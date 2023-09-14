@@ -46,6 +46,30 @@
     
     }
     
+    //===================================
+    .cuentaTotal {
+        width: 90%;
+        padding: 5px 15px;
+        margin: 20px auto;
+    
+      
+    
+        &-pagar {
+            width: 100%;
+            border: 0;
+            padding: 15px 20px;
+            border-radius: 5px;
+            background-color: rgb(94, 133, 36);
+            font-weight: bold;
+            font-size: 14px;
+            color: whitesmoke;
+            cursor: pointer;
+            transition: 0.5s all;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
     
     //PARA EL BANNER Y INFORMACION NO HACEMOS NADA EN TABLET
 

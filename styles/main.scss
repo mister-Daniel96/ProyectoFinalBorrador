@@ -341,11 +341,37 @@
     .productos-title {
         text-align: center;
         padding: 40px 0;
+        padding-bottom: 20px;
+    }
+
+    .ordenarContainer {
+        width: 100%;
+        display: flex;
+        margin: 30px 0;
+        align-items: center;
+        gap: 20px;
+        justify-content: center
+        
+
+        
+    }
+    #ordenarProducto{
+            outline: none;
+            font-size: 15px;
+            padding: 5px 0
     }
 
     .productos-items {
         @include styleCards;
     }
+}
+
+.misProductos-title {
+
+    text-align: center;
+    padding: 40px 0;
+    padding-bottom: 10px;
+
 }
 
 .productos-items-carrito {
@@ -440,7 +466,32 @@
 
 }
 
+.cuentaTotal {
+    width: 90%;
+    padding: 5px 15px;
+    margin: 20px auto;
 
+
+
+    &-pagar {
+        display: block;
+        width: 50%;
+        margin: 0 auto;
+        border: 0;
+        padding: 15px 20px;
+        border-radius: 5px;
+        background-color: rgb(94, 133, 36);
+        font-weight: bold;
+        font-size: 14px;
+        color: whitesmoke;
+        cursor: pointer;
+        transition: 0.5s all;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+    }
+}
 
 .container {
     width: 90%;
