@@ -298,6 +298,55 @@ function culminarCompra() {
     });
   }
 }
+function formContacto() {
+  const form = document.querySelector("#formContacto");
+  let error = "";
+  let patternEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/i;
+  let patternNumber = /^\d+$/;
+  if (form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const name = document.querySelector("#name").value;
+      const celular = document.querySelector("#celular").value;
+      const email = document.querySelector("#email").value;
+      const asunto = document.querySelector("#asunto").value;
+      if (name == "") error += "nombre vacio\n";
+      if (celular == "") error += "numero vacio\n";
+      if (email == "") error += "email vacio\n";
+      if (asunto == "") error += "asunto vacio\n";
+
+      if (email != "") {
+        if (!patternEmail.test(email)) {
+          error += "Correo incorrecto";
+        }
+      }
+      if (celular != "") {
+        if (!patternNumber.test(celular)) {
+          error += "Numero incorrecto";
+        }
+      }
+      if (error == "") {
+        Toastify({
+          text: "Correo enviado",
+          duration: 2000,
+          backgroundColor: "#1ED760",
+        }).showToast();
+        form.reset();
+      } else {
+        Toastify({
+          text: `${error}`,
+          duration: 2000,
+          backgroundColor: "#f43b47",
+        }).showToast();
+      }
+
+      error = "";
+      
+    });
+  }
+}
+
 async function showData() {
   const json = await getData();
   cargarCards(json);
@@ -309,6 +358,7 @@ async function showData() {
   agregarCarrito(json);
   eliminarDelCarrito();
   culminarCompra();
+  formContacto();
 }
 
 //En conclusion todas las interacciones que se haran sera a traves de la asincronia

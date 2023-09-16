@@ -351,14 +351,12 @@
         align-items: center;
         gap: 20px;
         justify-content: center
-        
-
-        
     }
-    #ordenarProducto{
-            outline: none;
-            font-size: 15px;
-            padding: 5px 0
+
+    #ordenarProducto {
+        outline: none;
+        font-size: 15px;
+        padding: 5px 0
     }
 
     .productos-items {
@@ -499,6 +497,154 @@
     margin: 0 auto;
     padding: 40px 0;
 }
+
+
+
+
+/* CONTACTOOOOOOOOOOOOOOOOOOOOOOOOOO */
+
+.hero-contacto {
+    min-height: 0;
+    background-image: none;
+    background-color: rgba(0, 0, 0, 0.274);
+}
+
+/* MAIN- CONTACTO*/
+.main__contacto {
+    min-height: 100vh;
+    /* sirve para la pantalla principal del Contacto */
+    background-color: whitesmoke;
+    /*   background-image: url(../images/formularioFondo.jpg); */
+    display: flex;
+    align-items: center;
+}
+
+/* .main__contacto__main {
+   
+} */
+
+.main__form {
+    width: 90%;
+    /* IMPORTANTE */
+    background-color: #433B58;
+    margin: 0 auto;
+    /* margin-top: 50px; */
+    /* ANTES ERA 150 */
+    padding: 10px 30px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px gray;
+    /* overflow: hidden; */
+
+    .title__form {
+        /* width: 30%; */
+        max-height: 400px;
+        margin: auto 0;
+        font-family: Arial, Helvetica, sans-serif;
+
+        .title-form {
+            /* para desaparecer el colapso de margen 
+            dimos un padding al contenedor mayor */
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+            margin-bottom: 60px;
+
+        }
+
+        & span {
+            display: block;
+
+            text-align: center;
+            color: #ffff;
+        }
+    }
+
+    .questions {
+        /* width: 40%; */
+        /* era 60 */
+        display: flex;
+        flex-direction: column;
+        padding: 5px 10px;
+        padding-top: 30px;
+
+        .question__item {
+            display: flex;
+            margin: 10px;
+            align-items: center;
+            justify-content: star;
+            gap: 20px;
+
+           
+
+            .input {
+                padding: 2px 10px;
+                font-size: 15px;
+                background-color: #fd5949;
+                outline: none;
+                border: none;
+                border-bottom: 2px solid white;
+                color: white;
+                background-color: transparent;
+                width: 100%;
+                &::placeholder{
+                   
+                    color: rgba(245, 245, 245, 0.274);
+                }
+            }
+
+            & textarea {
+                margin: 0 auto;
+                outline: none;
+                padding: 10px;
+            }
+
+            &-text {
+                margin-top: 40px;
+
+            }
+
+            .input-text {
+                resize: none;
+                width: 300px;
+                border-radius: 5px;
+            }
+        }
+
+
+        .question__button {
+            display: block;
+            cursor: pointer;
+            width: 60%;
+            color: #fd5949;
+            font-weight: bold;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            margin: 0 auto;
+            margin-bottom: 10px;
+            margin-top: 30px
+        }
+    }
+
+    /* mapa */
+    .mapa {
+        /* width: 30%; */
+        /* era 40 */
+        /* overflow: hidden; */
+        display: flex;
+        align-items: center;
+
+        & iframe {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+    }
+}
+
 
 /*    FOOTER            */
 .footer {
